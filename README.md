@@ -155,7 +155,7 @@ Menghitung rata-rata nilai dari semua mahasiswa dalam daftar.
 Mengakhiri program.
 
 # Contoh Interaksi Program
-![foto]()
+![foto](https://github.com/aprilia55/labpy08/blob/cc673db0ac42c34a99f3bd55532a6f66df7d81a0/Screen%20Shot%202024-12-09%20at%2021.08.33.png)
 
 
 
