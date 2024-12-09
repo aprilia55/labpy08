@@ -28,6 +28,14 @@ Class ini digunakan untuk merepresentasikan data individual mahasiswa.
 
 `nilai`: Nilai mahasiswa.
 
+```python
+class Mahasiswa:
+    def __init__(self, nama, nilai):
+        self.nama = nama
+        self.nilai = nilai
+```
+`__init__ `: Konstruktor yang menerima parameter nama dan nilai untuk menginisialisasi atribut mahasiswa.
+
 **Class** `Daftar Nilai Mahasiswa`
 
 Class ini digunakan untuk mengelola daftar mahasiswa.
@@ -48,11 +56,28 @@ Parameter:
 
 `nilai`: Nilai mahasiswa (float).
 
+```python
+def tambah_mahasiswa(self, nama, nilai):
+    mahasiswa = Mahasiswa(nama, nilai)
+    self.mahasiswa_list.append(mahasiswa)
+```
+
 2. **`tampilkan_daftar()`**
 
 Menampilkan semua data mahasiswa dalam format terstruktur.
 
 Jika daftar kosong, akan mencetak pesan "Daftar mahasiswa kosong."
+
+```python
+def tampilkan_daftar(self):
+    if not self.mahasiswa_list:
+        print("Daftar mahasiswa kosong.")
+        return
+
+    print("Daftar Nilai Mahasiswa:")
+    for idx, mahasiswa in enumerate(self.mahasiswa_list, start=1):
+        print(f"{idx}. {mahasiswa.nama} - Nilai: {mahasiswa.nilai}")
+```
 
 3.**`hapus_mahasiswa(nama)`**
 
@@ -64,11 +89,32 @@ Parameter:
 
 Jika nama tidak ditemukan, akan mencetak pesan "Mahasiswa dengan nama '[nama]' tidak ditemukan."
 
+```python
+def hapus_mahasiswa(self, nama):
+    for mahasiswa in self.mahasiswa_list:
+        if mahasiswa.nama == nama:
+            self.mahasiswa_list.remove(mahasiswa)
+            print(f"Mahasiswa dengan nama '{nama}' berhasil dihapus.")
+            return
+    print(f"Mahasiswa dengan nama '{nama}' tidak ditemukan.")
+```
+
 4. **`hitung_rata_rata()`**
 
 Menghitung dan mencetak rata-rata nilai dari semua mahasiswa dalam daftar.
 
 Jika daftar kosong, akan mencetak pesan "Tidak ada data mahasiswa untuk dihitung rata-rata."
+
+```python
+def hitung_rata_rata(self):
+    if not self.mahasiswa_list:
+        print("Tidak ada data mahasiswa untuk dihitung rata-rata.")
+        return
+
+    total_nilai = sum(mahasiswa.nilai for mahasiswa in self.mahasiswa_list)
+    rata_rata = total_nilai / len(self.mahasiswa_list)
+    print(f"Rata-rata nilai: {rata_rata:.2f}")
+```
 
 **Cara Menggunakan**
 
@@ -109,6 +155,7 @@ Menghitung rata-rata nilai dari semua mahasiswa dalam daftar.
 Mengakhiri program.
 
 # Contoh Interaksi Program
+![foto]()
 
 
 
