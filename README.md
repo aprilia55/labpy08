@@ -99,22 +99,34 @@ def hapus_mahasiswa(self, nama):
     print(f"Mahasiswa dengan nama '{nama}' tidak ditemukan.")
 ```
 
-4. **`hitung_rata_rata()`**
+4.**` Mengubah Data Mahasiswa`**
 
-Menghitung dan mencetak rata-rata nilai dari semua mahasiswa dalam daftar.
-
-Jika daftar kosong, akan mencetak pesan "Tidak ada data mahasiswa untuk dihitung rata-rata."
+Kode menu nomor 4 sekarang digunakan untuk mengubah data mahasiswa. Metode ubah_data_mahasiswa mencari mahasiswa berdasarkan nama, lalu meminta input nama dan nilai baru jika ditemukan. Jika nama tidak ada atau input nilai tidak valid, program menampilkan pesan yang sesuai. 
 
 ```python
-def hitung_rata_rata(self):
-    if not self.mahasiswa_list:
-        print("Tidak ada data mahasiswa untuk dihitung rata-rata.")
-        return
-
-    total_nilai = sum(mahasiswa.nilai for mahasiswa in self.mahasiswa_list)
-    rata_rata = total_nilai / len(self.mahasiswa_list)
-    print(f"Rata-rata nilai: {rata_rata:.2f}")
+elif pilihan == "4":
+    nama = input("Masukkan nama mahasiswa yang datanya ingin diubah: ")
+    daftar_nilai.ubah_data_mahasiswa(nama)
 ```
+Dan pastikan metode berikut ada di kelas `DaftarNilaiMahasiswa`:
+
+```python
+def ubah_data_mahasiswa(self, nama):
+    for mahasiswa in self.mahasiswa_list:
+        if mahasiswa.nama == nama:
+            print(f"Data ditemukan untuk mahasiswa '{nama}'.")
+            mahasiswa.nama = input("Masukkan nama baru: ")
+            try:
+                mahasiswa.nilai = float(input("Masukkan nilai baru: "))
+                print("Data mahasiswa berhasil diubah.")
+            except ValueError:
+                print("Nilai harus berupa angka!")
+            return
+    print(f"Mahasiswa dengan nama '{nama}' tidak ditemukan.")
+```
+python
+Salin kode
+
 
 **Cara Menggunakan**
 
@@ -146,9 +158,9 @@ Jika mahasiswa ditemukan, datanya akan dihapus.
 
 Jika tidak ditemukan, pesan kesalahan akan ditampilkan.
 
-**4. Hitung Rata-rata Nilai:**
+4.**Mengubah data Nama**
 
-Menghitung rata-rata nilai dari semua mahasiswa dalam daftar.
+Menghitung data (Nama) Mahasiswa.
 
 **5. Keluar:**
 
