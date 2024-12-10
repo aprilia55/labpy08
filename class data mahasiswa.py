@@ -28,14 +28,18 @@ class DaftarNilaiMahasiswa:
                 return
         print(f"Mahasiswa dengan nama '{nama}' tidak ditemukan.")
 
-    def hitung_rata_rata(self):
-        if not self.mahasiswa_list:
-            print("Tidak ada data mahasiswa untuk dihitung rata-rata.")
-            return
-
-        total_nilai = sum(mahasiswa.nilai for mahasiswa in self.mahasiswa_list)
-        rata_rata = total_nilai / len(self.mahasiswa_list)
-        print(f"Rata-rata nilai: {rata_rata:.2f}")
+    def ubah_data_mahasiswa(self, nama):
+        for mahasiswa in self.mahasiswa_list:
+            if mahasiswa.nama == nama:
+                print(f"Data ditemukan untuk mahasiswa '{nama}'.")
+                mahasiswa.nama = input("Masukkan nama baru: ")
+                try:
+                    mahasiswa.nilai = float(input("Masukkan nilai baru: "))
+                    print("Data mahasiswa berhasil diubah.")
+                except ValueError:
+                    print("Nilai harus berupa angka!")
+                return
+        print(f"Mahasiswa dengan nama '{nama}' tidak ditemukan.")
 
 # Program utama
 daftar_nilai = DaftarNilaiMahasiswa()
@@ -45,7 +49,7 @@ while True:
     print("1. Tambah Mahasiswa")
     print("2. Tampilkan Daftar Mahasiswa")
     print("3. Hapus Mahasiswa")
-    print("4. Hitung Rata-rata Nilai")
+    print("4. Ubah Data Mahasiswa")
     print("5. Keluar")
 
     pilihan = input("Pilih menu (1-5): ")
@@ -64,7 +68,8 @@ while True:
         nama = input("Masukkan nama mahasiswa yang akan dihapus: ")
         daftar_nilai.hapus_mahasiswa(nama)
     elif pilihan == "4":
-        daftar_nilai.hitung_rata_rata()
+        nama = input("Masukkan nama mahasiswa yang datanya ingin diubah: ")
+        daftar_nilai.ubah_data_mahasiswa(nama)
     elif pilihan == "5":
         print("Program selesai. Terima kasih!")
         break
