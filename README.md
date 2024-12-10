@@ -157,6 +157,6 @@ Mengakhiri program.
 # Contoh diagram kode program
 ![foto](https://github.com/aprilia55/labpy08/blob/e37d9e22872e7b24373ed9af05ac2b528d5f082b/Screen%20Shot%202024-12-10%20at%2023.03.44.png)
 # Hasil Interaksi Program
-![foto]()
+![foto](https://github.com/aprilia55/labpy08/blob/664f3cf048368536bf56ef1c0e523c9c31600387/Screen%20Shot%202024-12-10%20at%2022.34.37.png)
 # flowchart alur program
 ![foto]()
