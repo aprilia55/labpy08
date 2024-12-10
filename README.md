@@ -159,4 +159,4 @@ Mengakhiri program.
 # Hasil Interaksi Program
 ![foto](https://github.com/aprilia55/labpy08/blob/664f3cf048368536bf56ef1c0e523c9c31600387/Screen%20Shot%202024-12-10%20at%2022.34.37.png)
 # flowchart alur program
-![foto]()
+![foto](https://github.com/aprilia55/labpy08/blob/ef54baab814d727cc344dbedff6c1280dd38da73/flowchart%20alur%20program.jpeg)
